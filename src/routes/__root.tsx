@@ -22,9 +22,22 @@ export const Route = createRootRouteWithContext<{
     meta: [
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      ...seo({ title: 'My App', description: 'Built with TanStack Start' })
+      { name: 'theme-color', content: '#0b0b0c' },
+      ...seo({
+        title: 'PixelNest — Image compression',
+        description: 'Compress JPEG, PNG, WebP and AVIF images in your browser.'
+      })
     ],
-    links: [{ rel: 'icon', href: '/favicon.ico' }]
+    links: [
+      { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
+      { rel: 'icon', href: '/favicon.ico', sizes: 'any' },
+      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&display=swap'
+      }
+    ]
   }),
   errorComponent: (props) => (
     <RootDocument>
@@ -45,20 +58,19 @@ function RootComponent() {
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='en' suppressHydrationWarning>
+    <html lang='en' className='dark' suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
       <body>
         <ThemeProvider
           attribute='class'
-          defaultTheme='system'
-          enableSystem
+          forcedTheme='dark'
           disableTransitionOnChange
         >
           <TooltipProvider>
             {children}
-            <Toaster />
+            <Toaster theme='dark' position='bottom-center' />
           </TooltipProvider>
         </ThemeProvider>
         <Scripts />
