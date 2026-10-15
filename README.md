@@ -1,6 +1,11 @@
 # PixelNest
 
-<a href="https://layerwise.app"><img src="https://layerwise.app/powered-by.png" alt="Powered by Layerwise" width="320" /></a>
+<a href="https://layerwise.app">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://layerwise.app/powered-by-dark.png" />
+    <img src="https://layerwise.app/powered-by.png" alt="Powered by Layerwise" width="320" />
+  </picture>
+</a>
 
 PixelNest compresses JPEG, PNG, WebP and AVIF images in the browser. Images
 never leave the device: decoding and encoding run in Web Workers with

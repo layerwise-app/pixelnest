@@ -3,6 +3,7 @@ import { formatBytes, percentSaved } from '~/lib/format';
 import { useLifetimeStats } from '~/lib/lifetime-stats';
 import { cn } from '~/lib/utils';
 import { LandingFeatures } from './landing-features';
+import { PoweredByLayerwise } from '~/components/powered-by-layerwise';
 import { LogoMark } from './logo';
 import { formatSavings } from './queue-summary';
 
@@ -114,6 +115,9 @@ function SiteFooter() {
         <a href='#top' className='hover:text-foreground'>
           Back to top
         </a>
+      </div>
+      <div className='mx-auto flex max-w-7xl justify-center px-4 pb-8 sm:px-6'>
+        <PoweredByLayerwise />
       </div>
     </footer>
   );
