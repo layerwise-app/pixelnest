@@ -57,7 +57,8 @@ during publishing.
 - `src/styles/app.css`: theme tokens
 - `wrangler.jsonc`: local Worker and D1 bindings
 
-The starter's Better Auth and D1 setup remain in place, but the compressor does
-not use accounts. Keep secrets server-side. Variables prefixed with `VITE_` are
+The compressor has no account pages. The starter's D1 database, Drizzle schema
+and Better Auth server (`src/lib/auth.ts`, `/api/auth`) are kept for a future
+feature such as synced presets. Keep secrets server-side. Variables prefixed with `VITE_` are
 included in the browser bundle. `BETTER_AUTH_SECRET`, `BETTER_AUTH_URL`, and
 `AUTH_EMAIL_URL` belong in the Worker environment.
