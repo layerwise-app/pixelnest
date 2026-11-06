@@ -1,3 +1,4 @@
+import { GitHubButton } from './github-button';
 import { Logo } from './logo';
 
 const LINKS = [
@@ -13,17 +14,20 @@ export function SiteHeader() {
         <a href='/' className='rounded-md outline-none focus-visible:ring-2 focus-visible:ring-brand/60'>
           <Logo />
         </a>
-        <nav aria-label='Sections' className='hidden items-center gap-1 sm:flex'>
-          {LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className='rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground'
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
+        <div className='flex items-center gap-2'>
+          <nav aria-label='Sections' className='hidden items-center gap-1 sm:flex'>
+            {LINKS.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className='rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground'
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+          <GitHubButton />
+        </div>
       </div>
     </header>
   );
